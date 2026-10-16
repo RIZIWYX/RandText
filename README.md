@@ -15,7 +15,7 @@ texte d'origine.
 
 ```
 Randtext/
-├── randtext/                 # Programme principal (code écrit par l'auteur)
+├── randtext/                 # Programme principal 
 │   ├── main.c                #   Point d'entrée : lecture, construction, génération
 │   ├── randtext.c/.h/_ip.h   #   Cœur : chaîne de Markov + génération du texte
 │   ├── option/               #   Sous-module : ligne de commande
