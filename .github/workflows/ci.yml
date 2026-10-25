@@ -1,0 +1,11 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compilation stricte (-Wall -Wextra -Wconversion -Werror)
+        run: make
+      - name: Exécution sur un texte d'exemple
+        run: ./randtext/randtext --order=2 tests/knock.txt

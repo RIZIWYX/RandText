@@ -1,0 +1,10 @@
+# Fichiers compilés
+*.o
+randtext/randtext
+
+# Archive de rendu
+*.tar.gz
+
+# Fichiers temporaires
+.#*
+*~

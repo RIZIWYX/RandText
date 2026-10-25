@@ -1,11 +1,15 @@
 # randtext
 
-Générateur de texte aléatoire  : le programme lit
+[![CI](https://github.com/RIZIWYX/randtext/actions/workflows/ci.yml/badge.svg)](https://github.com/RIZIWYX/randtext/actions/workflows/ci.yml)
+![Langage](https://img.shields.io/badge/langage-C23-blue)
+[![Licence MIT](https://img.shields.io/badge/licence-MIT-green)](LICENSE)
+
+Générateur de texte aléatoire écrit en C dans le cadre de l'UE Algorithmique 3 (L2 Informatique, Université de Rouen Normandie, 2025-2026). Le programme lit
 un texte sur l'entrée standard (ou dans un fichier) et produit en sortie un texte
 généré dont chaque mot dépend statistiquement des *n* mots qui le précèdent dans le
 texte d'origine.
 
-> **Auteur et périmètre.** Code écrit par **Rayane Graine** et **Accyl Benajaoud** : le dossier `randtext/`
+> **Auteur et périmètre.** Code écrit par **Rayane Graïne** et **Accyl Benajaoud** : le dossier `randtext/`
 > — point d'entrée `main.c`, cœur algorithmique `randtext.c`, et le sous-module
 > `option/` (ligne de commande) — ainsi que l'intégration et toute la gestion
 > mémoire. Les bibliothèques `hashtable/`, `holdall/` et `malloccp/` sont
@@ -39,8 +43,7 @@ Randtext/
 │   └── lesmiserables.txt     #   Texte volumineux (~3 Mo) pour stress test
 │
 ├── doc/
-│   ├── randtext.pdf          # Documentation du projet
-│   └── algo3_projet.pdf      # Sujet
+│   └── randtext.pdf          # Rapport du projet
 │
 ├── makefile                  # Cibles globales (all, clean, dist)
 ├── .gitignore
@@ -160,4 +163,4 @@ Deux scripts sont fournis dans `tests/` :
 
 ## Licence
 
-Projet académique — usage pédagogique.
+Code du dossier `randtext/` sous licence **MIT**, voir [LICENSE](LICENSE). Les bibliothèques fournies par l'UE n'en font pas partie.
