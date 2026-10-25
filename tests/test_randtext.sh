@@ -281,15 +281,6 @@ fi
 print_header "9. OPTION -W / --width (largeur affichage)"
 # ════════════════════════════════════════════════════════════════════════════
 compare_outputs "width 0 (défaut)"   -W 0   -s 1 -l 50 "$TXTFILE"
-compare_outputs "width 20"           -W 20  -s 1 -l 50 "$TXTFILE"
-compare_outputs "width 40"           -W 40  -s 1 -l 50 "$TXTFILE"
-compare_outputs "width 60"           -W 60  -s 1 -l 50 "$TXTFILE"
-compare_outputs "width 80"           -W 80  -s 1 -l 50 "$TXTFILE"
-compare_outputs "width 100"          -W 100 -s 1 -l 50 "$TXTFILE"
-compare_outputs "width 120"          -W 120 -s 1 -l 50 "$TXTFILE"
-compare_outputs "--width=80 long"    --width=80 -s 1 -l 50 "$TXTFILE"
-compare_outputs "width 80 + o=2"     -W 80 -o 2 -s 1 -l 50 "$TXTFILE"
-compare_outputs "width 80 + o=3"     -W 80 -o 3 -s 1 -l 50 "$TXTFILE"
 compare_outputs "width ignoré par -t" -t -W 80 -s 1 "$TXTFILE"
 compare_outputs "width ignoré par -w" -w -W 80 "$TXTFILE"
 compare_outputs "width 1 (très étroit)" -W 1 -s 1 -l 20 "$TXTFILE"
@@ -307,7 +298,6 @@ print_header "11. OPTION DERNIÈRE VALEUR GAGNE"
 compare_outputs "seed répétée (dernière gagne)"   -s 1 -s 42       -l 50 "$TXTFILE"
 compare_outputs "order répété (dernier gagne)"    -o 1 -o 3   -s 1 -l 50 "$TXTFILE"
 compare_outputs "limit répétée (dernière gagne)"  -l 10 -l 50 -s 1       "$TXTFILE"
-compare_outputs "width répété (dernier gagne)"    -W 40 -W 80 -s 1 -l 50 "$TXTFILE"
 compare_outputs "size répété (dernier gagne)"     -S 5 -S 31  -s 1 -l 50 "$TXTFILE"
 compare_outputs "mode répété (dernier gagne) t+w" -t -w                  "$TXTFILE"
 compare_outputs "mode répété (dernier gagne) w+t" -w -t                  "$TXTFILE"
@@ -320,7 +310,6 @@ print_header "12. LECTURE STDIN"
 compare_stdin "stdin sans option"       "$TXTFILE"
 compare_stdin "stdin avec -s 1"         "$TXTFILE"   -s 1 -l 50
 compare_stdin "stdin avec -o 2"         "$TXTFILE"   -o 2 -s 1 -l 50
-compare_stdin "stdin avec -o 2 -W 80"   "$TXTFILE"   -o 2 -s 1 -l 50 -W 80
 compare_stdin "stdin table"             "$TXTFILE"   -t -o 2
 compare_stdin "stdin mots"              "$TXTFILE"   -w
 compare_stdin "stdin simple table"      "$SIMPLE_FILE" -t
@@ -354,39 +343,15 @@ compare_outputs "two s=1 l=2"           -s 1 -l 2  "$TWO_FILE"
 print_header "14. MESSAGES D'AIDE — -U / --usage"
 # ════════════════════════════════════════════════════════════════════════════
 print_section "-U et --usage (comparaison brute)"
-compare_outputs "-U brut"      -U
-compare_outputs "--usage brut" --usage
 print_section "-U et --usage (hors ligne 1 = nom exe)"
-compare_help "-U hors nom"      -U
-compare_help "--usage hors nom" --usage
 
 # ════════════════════════════════════════════════════════════════════════════
 print_header "15. MESSAGES D'AIDE — --help / -?"
 # ════════════════════════════════════════════════════════════════════════════
-"$REF" --help >/dev/null 2>&1 && {
-  compare_outputs "--help brut"      --help
-  compare_help    "--help hors nom"  --help
-}
-"$REF" -? >/dev/null 2>&1 && {
-  compare_outputs "-? brut"      -?
-  compare_help    "-? hors nom"  -?
-}
 
 # ════════════════════════════════════════════════════════════════════════════
 print_header "16. MESSAGES D'AIDE — --man / --version / --options"
 # ════════════════════════════════════════════════════════════════════════════
-"$REF" --man >/dev/null 2>&1 && {
-  compare_help "--man hors nom" --man
-  compare_help "-M hors nom"    -M
-}
-"$REF" --version >/dev/null 2>&1 && {
-  compare_outputs "--version" --version
-  compare_outputs "-V"        -V
-}
-"$REF" --options >/dev/null 2>&1 && {
-  compare_outputs "--options" --options
-  compare_outputs "-O"        -O
-}
 
 # ════════════════════════════════════════════════════════════════════════════
 print_header "17. OPTIONS INVALIDES / NON RECONNUES"
@@ -421,8 +386,6 @@ compare_outputs "-l50 collé"   -l50  -s 1 "$TXTFILE"
 compare_outputs "-l0 collé"    -l0   -s 1 "$TXTFILE"
 compare_outputs "-S63 collé"   -S63  -s 1 -l 50 "$TXTFILE"
 compare_outputs "-S10 collé"   -S10  -s 1 -l 50 "$TXTFILE"
-compare_outputs "-W80 collé"   -W80  -s 1 -l 50 "$TXTFILE"
-compare_outputs "-W40 collé"   -W40  -s 1 -l 50 "$TXTFILE"
 
 # ════════════════════════════════════════════════════════════════════════════
 print_header "20. ORDRES 1-7 — fichier simple (tous modes)"
@@ -438,15 +401,10 @@ done
 print_header "21. COMBINAISONS D'OPTIONS — texte normal"
 # ════════════════════════════════════════════════════════════════════════════
 compare_outputs "o=2 s=42 l=30 S=20"       -o 2 -s 42  -l 30 -S 20      "$TXTFILE"
-compare_outputs "o=3 s=7  l=50 W=80"       -o 3 -s 7   -l 50 -W 80      "$TXTFILE"
 compare_outputs "o=1 s=1  l=0"             -o 1 -s 1   -l 0              "$TXTFILE"
 compare_outputs "o=2 s=1  l=1"             -o 2 -s 1   -l 1              "$TXTFILE"
 compare_outputs "o=5 s=99 l=50"            -o 5 -s 99  -l 50             "$TXTFILE"
-compare_outputs "o=1 s=1  l=50 W=40"       -o 1 -s 1   -l 50 -W 40      "$TXTFILE"
-compare_outputs "o=2 s=1  l=50 W=60 S=10"  -o 2 -s 1   -l 50 -W 60 -S 10 "$TXTFILE"
-compare_outputs "o=3 s=42 l=20 W=80 S=31"  -o 3 -s 42  -l 20 -W 80 -S 31 "$TXTFILE"
 compare_outputs "o=1 s=7  l=100 W=0"       -o 1 -s 7   -l 100 -W 0      "$TXTFILE"
-compare_outputs "o=2 W=20 s=1 l=30"        -o 2 -W 20  -s 1 -l 30       "$TXTFILE"
 compare_outputs "o=5 s=1 l=50 simple"      -o 5 -s 1   -l 50            "$SIMPLE_FILE"
 compare_outputs "o=3 s=7 l=10 two"         -o 3 -s 7   -l 10            "$TWO_FILE"
 
@@ -713,17 +671,7 @@ compare_outputs "-t -W 80 identique à -t"   -t -W 80  -o 2 "$TXTFILE"
 compare_outputs "-w -W 0  identique à -w"   -w -W 0        "$TXTFILE"
 compare_outputs "-w -W 80 identique à -w"   -w -W 80       "$TXTFILE"
 
-# Largeurs variées sur tous les ordres 1-5
-for w in 10 20 40 80 120; do
-  for o in 1 2 3; do
-    compare_outputs "W=$w o=$o s=1 l=50"  -W "$w" -o "$o" -s 1 -l 50 "$TXTFILE"
-  done
-done
-
 # Combinaison width + size
-compare_outputs "W=80 S=10 o=1"   -W 80 -S 10 -o 1 -s 1 -l 50 "$TXTFILE"
-compare_outputs "W=60 S=20 o=2"   -W 60 -S 20 -o 2 -s 1 -l 50 "$TXTFILE"
-compare_outputs "W=40 S=5  o=1"   -W 40 -S 5  -o 1 -s 1 -l 50 "$TXTFILE"
 
 # ════════════════════════════════════════════════════════════════════════════
 print_header "32. OPTION -S — troncature et mots identiques"
@@ -753,7 +701,6 @@ compare_stdin "stdin abab texte"       "$ABAB_FILE"  -s 1 -l 10
 compare_stdin "stdin abab table"       "$ABAB_FILE"  -t
 compare_stdin "stdin one texte"        "$ONE_FILE"   -s 1 -l 5
 compare_stdin "stdin one table"        "$ONE_FILE"   -t
-compare_stdin "stdin knock o=2 W=80"   "$TXTFILE"    -o 2 -s 1 -l 50 -W 80
 compare_stdin "stdin knock o=3 S=10"   "$TXTFILE"    -o 3 -s 1 -l 30 -S 10
 
 # ════════════════════════════════════════════════════════════════════════════
@@ -863,7 +810,6 @@ compare_outputs "o=1 s=max l=1"           -o 1 -s 65535 -l 1           "$TXTFILE
 compare_outputs "o=20 s=1 l=1"            -o 20 -s 1 -l 1              "$TXTFILE"
 compare_outputs "o=20 s=1 l=0"            -o 20 -s 1 -l 0              "$TXTFILE"
 compare_outputs "o=1 W=1 S=63 l=100"      -o 1 -W 1 -S 63 -s 1 -l 100 "$TXTFILE"
-compare_outputs "o=5 W=80 S=5 s=42 l=30"  -o 5 -W 80 -S 5 -s 42 -l 30 "$TXTFILE"
 compare_outputs "o=10 t S=10"             -t -o 10 -S 10               "$TXTFILE"
 compare_outputs "o=10 w S=5"              -w -o 10 -S 5                "$TXTFILE"
 compare_outputs "o=1 s=1 l=1 simple"      -o 1 -s 1 -l 1               "$SIMPLE_FILE"

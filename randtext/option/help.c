@@ -254,7 +254,7 @@ void display_usage() {
 void display_version() {
   printf(
       XSTR(NAME) " - " XSTR(VERSION) "\n"
-      "This is payant software: you are not free to redistribute it.\n"
-      "Written by A.R.Graine & A.Benadjaoud.\n"
+      "Licence MIT : logiciel libre, vous pouvez le redistribuer.\n"
+      "Écrit par Rayane Graïne et Accyl Benadjaoud.\n"
       );
 }
