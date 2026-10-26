@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2026 Rayane Graïne et Accyl Benajaoud
+Copyright (c) 2026 Rayane Graïne et Accyl Benadjaoud
 
 Cette licence couvre le code du dossier randtext/ (main.c, randtext.c et le
 sous-module option/). Les bibliothèques hashtable/, holdall/ et malloccp/, ainsi

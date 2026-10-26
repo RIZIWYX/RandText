@@ -9,7 +9,7 @@ un texte sur l'entrée standard (ou dans un fichier) et produit en sortie un tex
 généré dont chaque mot dépend statistiquement des *n* mots qui le précèdent dans le
 texte d'origine.
 
-> **Auteur et périmètre.** Code écrit par **Rayane Graïne** et **Accyl Benajaoud** : le dossier `randtext/`
+> **Auteur et périmètre.** Code écrit par **Rayane Graïne** et **Accyl Benadjaoud** : le dossier `randtext/`
 > — point d'entrée `main.c`, cœur algorithmique `randtext.c`, et le sous-module
 > `option/` (ligne de commande) — ainsi que l'intégration et toute la gestion
 > mémoire. Les bibliothèques `hashtable/`, `holdall/` et `malloccp/` sont
