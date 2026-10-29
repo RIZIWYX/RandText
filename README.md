@@ -21,7 +21,7 @@ texte d'origine.
 Randtext/
 ├── randtext/                 # Programme principal 
 │   ├── main.c                #   Point d'entrée : lecture, construction, génération
-│   ├── randtext.c/.h/_ip.h   #   Cœur : chaîne de Markov + génération du texte
+│   ├── randtext.c/.h/_ip.h   #   Cœur : table des mots suivants + génération du texte
 │   ├── option/               #   Sous-module : ligne de commande
 │   │   ├── option.c/.h/_ip.h #     Analyse des arguments et options
 │   │   ├── help.c/.h         #     Affichage de l'aide (--help)
