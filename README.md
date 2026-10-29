@@ -4,6 +4,8 @@
 ![Langage](https://img.shields.io/badge/langage-C23-blue)
 [![Licence MIT](https://img.shields.io/badge/licence-MIT-green)](LICENSE)
 
+![Démo : génération de texte à partir de Knock et tests](doc/demo.gif)
+
 Générateur de texte aléatoire écrit en C dans le cadre de l'UE Algorithmique 3 (L2 Informatique, Université de Rouen Normandie, 2025-2026). Le programme lit
 un texte sur l'entrée standard (ou dans un fichier) et produit en sortie un texte
 généré dont chaque mot dépend statistiquement des *n* mots qui le précèdent dans le
