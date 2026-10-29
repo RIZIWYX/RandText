@@ -1,6 +1,6 @@
 # randtext
 
-[![CI](https://github.com/RIZIWYX/randtext/actions/workflows/ci.yml/badge.svg)](https://github.com/RIZIWYX/randtext/actions/workflows/ci.yml)
+[![CI](https://github.com/RIZIWYX/RandText/actions/workflows/ci.yml/badge.svg)](https://github.com/RIZIWYX/RandText/actions/workflows/ci.yml)
 ![Langage](https://img.shields.io/badge/langage-C23-blue)
 [![Licence MIT](https://img.shields.io/badge/licence-MIT-green)](LICENSE)
 
