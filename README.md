@@ -82,6 +82,15 @@ Pour nettoyer :
 make clean
 ```
 
+## Télécharger
+
+Un exécutable Linux x86-64 est disponible dans la [release v1.0.0](https://github.com/RIZIWYX/RandText/releases/tag/v1.0.0) :
+
+```sh
+chmod +x randtext-linux-x86_64
+./randtext-linux-x86_64 --order=2 knock.txt
+```
+
 ## Utilisation
 
 ```sh
@@ -99,13 +108,15 @@ make
 ./randtext --order=2 ../tests/knock.txt
 ```
 
-### Exemple de sortie (extrait, ordre 2 sur `knock.txt`)
+### Exemple de sortie (sortie réelle, ordre 2 sur `knock.txt`)
 
 ```
-Knock: De quoi souffrez-vous? Le Tambour: Par ici... ou cela, par ici?
-Le Tambour: Oui, on dirait que ca vous grattouille? Attendez que je
-reflechisse! (Il rit.) Voila. Quand j'ai dine, il y a des fois que je
-sens une espece de demangeaison ici.
+Knock: De quoi souffrez-vous? Le Tambour: Par ici. Knock: Par ici... ou
+cela, par ici? Le Tambour: Oui, on dirait que ca vous grattouille? Le
+Tambour: Attendez que je reflechisse! (Il rit.) Voila. Quand j'ai dine,
+il y a des fois que je sens une espece de demangeaison ici. (Il montre le
+haut de son epigastre.) Ca me chatouille, ou plutot, ca me
+grattouillerait plus.
 ```
 
 ### Modes de sortie
