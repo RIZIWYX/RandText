@@ -2,11 +2,6 @@ MIT License
 
 Copyright (c) 2026 Rayane Graïne et Accyl Benadjaoud
 
-Cette licence couvre le code du dossier randtext/ (main.c, randtext.c et le
-sous-module option/). Les bibliothèques hashtable/, holdall/ et malloccp/, ainsi
-que le binaire tests/randtext_ref, sont fournis par l'UE Algorithmique 3 de
-l'Université de Rouen Normandie et ne sont pas concernés par cette licence.
-
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights

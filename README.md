@@ -20,7 +20,7 @@ texte d'origine.
 ## Architecture
 
 ```
-Randtext/
+RandText/
 ├── randtext/                 # Programme principal 
 │   ├── main.c                #   Point d'entrée : lecture, construction, génération
 │   ├── randtext.c/.h/_ip.h   #   Cœur : table des mots suivants + génération du texte
@@ -165,4 +165,4 @@ Deux scripts sont fournis dans `tests/` :
 
 ## Licence
 
-Code du dossier `randtext/` sous licence **MIT**, voir [LICENSE](LICENSE). Les bibliothèques fournies par l'UE n'en font pas partie.
+Code du dossier `randtext/` sous licence **MIT**, voir [LICENSE](LICENSE). Les bibliothèques `hashtable/`, `holdall/` et `malloccp/`, ainsi que le binaire `tests/randtext_ref`, sont fournis par l'UE Algorithmique 3 de l'Université de Rouen Normandie et ne sont pas concernés par cette licence.
